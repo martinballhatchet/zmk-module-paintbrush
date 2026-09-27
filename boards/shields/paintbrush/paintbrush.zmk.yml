@@ -1,7 +1,15 @@
 file_format: "1"
-id: the_paintbrush_left 
+id: paintbrush
 name: The Paintbrush
 type: shield
 url: https://github.com/keebd/thepaintbrush
-targets:
-  - board: nice_nano_v2
+requires:
+  - pro_micro
+exposes:
+  - i2c_oled
+features:
+  - keys
+  - display
+siblings:
+  - paintbrush_left
+  - paintbrush_right
