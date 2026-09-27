@@ -1,11 +1,17 @@
-# ZMK Module Template
+# ZMK Paintbrush Module
 
-This repository contains a template for a ZMK module, as it would most frequently be used. 
+This repository contains a ZMK module for the Paintbrush 8 key keyboard / macropad.
+All work is by KemoNine. I have copied it here to attempt a different layout.
 
-## Usage
 
-Read through the [ZMK Module Creation](https://zmk.dev/docs/development/module-creation) page for details on how to configure this template.
+/* 
+ * This code includes code adapted from KemoNine.
+ * Original Source: (https://github.com/arduxio/zmk-ardux)
+ * Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org)
+ * Modifications made: Adapted into ZMK module
+ */
 
-## More Info
 
-For more info on modules, you can read through  through the [Zephyr modules page](https://docs.zephyrproject.org/3.5.0/develop/modules.html) and [ZMK's page on using modules](https://zmk.dev/docs/features/modules). [Zephyr's west manifest page](https://docs.zephyrproject.org/3.5.0/develop/west/manifest.html#west-manifests) may also be of use.
+## Licensing
+
+Unless otherwise stated all source code is licensed under the [Apache 2 License](LICENSE-APACHE-2.0.txt).

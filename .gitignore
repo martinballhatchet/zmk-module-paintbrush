@@ -1,0 +1,10 @@
+boards/shields/paintbrush/Kconfig.defconfigZone.Identifier
+boards/shields/paintbrush/Kconfig.shieldZone.Identifier
+boards/shields/paintbrush/README.mdZone.Identifier
+boards/shields/paintbrush/the_paintbrush_left.confZone.Identifier
+boards/shields/paintbrush/the_paintbrush_left.keymapZone.Identifier
+boards/shields/paintbrush/the_paintbrush_left.overlayZone.Identifier
+boards/shields/paintbrush/the_paintbrush_right.confZone.Identifier
+boards/shields/paintbrush/the_paintbrush_right.keymapZone.Identifier
+boards/shields/paintbrush/the_paintbrush_right.overlayZone.Identifier
+LICENSE-APACHE-2.0.txtZone.Identifier
