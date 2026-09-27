@@ -1,0 +1,7 @@
+file_format: "1"
+id: paintbrush
+name: The Paintbrush
+type: shield
+url: https://github.com/keebd/thepaintbrush
+targets:
+  - board: nice_nano_v2
