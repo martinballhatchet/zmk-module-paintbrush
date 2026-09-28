@@ -11,5 +11,5 @@ features:
   - keys
   - display
 siblings:
-  - paintbrush_left
-  - paintbrush_right
+  - the_paintbrush_left
+  - the_paintbrush_right
