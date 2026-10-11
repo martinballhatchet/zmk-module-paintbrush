@@ -40,7 +40,7 @@
  *   - Please note: A/E key positions should be on your INDEX finger
  *     - The online reference is for right handed use
  *     - When using the ARDUX layout left handed you'll want to ensure your keypositions are flipped along the Y axis
- *   - Update/adjust the key positions using your boards keymap 
+ *   - Update/adjust the key positions using your boards keymap
  *     - See below for additional details
  *   - YOU MUST SET THE FOLLOWING CONFIG VALUES FOR THIS SETUP TO WORK PROPERLY IN YOUR BOARDS .conf FILE
  *     - CONFIG_ZMK_COMBO_MAX_COMBOS_PER_KEY=24
@@ -62,7 +62,7 @@
 /*****************************************
  * Define key positions used for combos
  * These definitions are used to define the various ARDUX combos
- * 
+ *
  * Please see the documentation on "combos" for details on how to find the proper key positions
  *
  * Default key positions are for a generic 4x2 keyboard and should NOT be used outright
@@ -135,7 +135,7 @@
 &sk {
 	release-after-ms = <TIMEOUT_STICKY_LEADER_KEY>;
 };
-&sl { 
+&sl {
 	release-after-ms = <TIMEOUT_STICKY_LEADER_KEY>;
 };
 &mmv {
@@ -258,7 +258,7 @@
 		combo_comma       { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_A KEY_I>; bindings = <&kp COMMA>; };
 		combo_slash       { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_A KEY_O>; bindings = <&kp SLASH>; };
 		combo_exclamation { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_T KEY_I>; bindings = <&kp EXCL>; };
-		
+
 		combo_seven { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_A KEY_R>; bindings = <&kp N7>; };
 		combo_eight { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_R KEY_T>; bindings = <&kp N8>; };
 		combo_nine  { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_E KEY_Y>; bindings = <&kp N9>; };
@@ -282,7 +282,7 @@
 		combo_x            { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO_3>; key-positions = <KEY_R KEY_T KEY_S>; bindings = <&kp X>; };
 		combo_l            { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO_3>; key-positions = <KEY_E KEY_Y KEY_I>; bindings = <&kp L>; };
 		combo_single_quote { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO_3>; key-positions = <KEY_A KEY_Y KEY_I>; bindings = <&kp SQT>; };
-		
+
 		/*****************************************
 		 * 4 key combos
 		 *****************************************/
@@ -516,7 +516,7 @@
 		};
 		#else
 		base {
-			display-name = "ARDUX";
+			display-name = "RainToe";
 			bindings = <
 				LEADING_NONES
 				&layer_numbers_kp LAYER_ID_NUMBERS ARDUX_BASE_S        &kp ARDUX_BASE_T     &kp ARDUX_BASE_R     &layer_parentheticals_kp LAYER_ID_PARENTHETICALS ARDUX_BASE_A
@@ -567,7 +567,7 @@
 			>;
 		};
 		parentheticals {
-			display-name = "Paren";
+			display-name = "Parentheses";
 			bindings = <
 				LEADING_NONES
 				&kp LBRC                                    &kp LPAR  &kp RPAR  &mo LAYER_ID_PARENTHETICALS
