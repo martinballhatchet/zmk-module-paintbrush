@@ -516,7 +516,7 @@
 		};
 		#else
 		base {
-			display-name = "RainToe";
+			display-name = "rain toe 1";
 			bindings = <
 				LEADING_NONES
 				&layer_numbers_kp LAYER_ID_NUMBERS ARDUX_BASE_S        &kp ARDUX_BASE_T     &kp ARDUX_BASE_R     &layer_parentheticals_kp LAYER_ID_PARENTHETICALS ARDUX_BASE_A
