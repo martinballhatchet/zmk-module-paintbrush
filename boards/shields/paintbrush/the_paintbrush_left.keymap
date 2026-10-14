@@ -22,10 +22,6 @@
 #define KEY_T 5
 #define KEY_SP 4
 
-// Define Offsets
-#define LEADING_NONES NONE(0,0,0)
-#define MIDDLE_NONES NONE(0, 0, 0)
-#define TRAILING_NONES NONE(0, 0, 0)
 
 // Include main ardux.io keymap
 #include "raintoe.dtsi"
