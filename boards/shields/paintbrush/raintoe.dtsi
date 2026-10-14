@@ -16,7 +16,7 @@
  * DONE: Remove big ardux
  * DONE: Remove right-handed for now
  * DONE: Remove leading nones stuff
- * TODO: Make sure it still builds
+ * DONE: Make sure it still builds
  * Note: At this point, even with the names of the keys changed, it's stil ardux
  * TODO: Next: swap in the RAIN TOE keys for ARTSEYIO - need SP <-> Y, N <-> S ?
  * TODO: All letters
@@ -56,47 +56,6 @@
  *     - CONFIG_ZMK_COMBO_MAX_PRESSED_COMBOS=8
  *****************************************/
 
-/*****************************************
- * Define which layout you want to use
- *  ONLY ENABLE ONE OF THESE
-*****************************************/
-//#define ARDUX_RIGHT 1
-//#define ARDUX_LEFT 1
-// If you use COLEMAK as your standard keyboard layout, you may want this
-//     This define will make base ardux keys and N more in line with COLEMAK
-//#define ARDUX_COLEMAK 1
-
-/*****************************************
- * Define key positions used for combos
- * These definitions are used to define the various ARDUX combos
- *
- * Please see the documentation on "combos" for details on how to find the proper key positions
- *
- * Default key positions are for a generic 4x2 keyboard and should NOT be used outright
- * DEFINE these definitions in your boards keymap BEFORE including ardux.dtsi
-*****************************************/
-// ARTS Row
-// #define KEY_N 0
-// #define KEY_I 1
-// #define KEY_A 2
-// #define KEY_R 3
-// EYIO Row
-// #define KEY_E 4
-// #define KEY_O 5
-// #define KEY_T 6
-// #define KEY_SP 7
-// #define KEY_F_TOP -1
-// #define KEY_F_BOTTOM -1
-
-/*****************************************
- * Define key position offsets in main keymap
- *
- * In order to make this keymap flexible, you must setup the number of &none "offsets" to use
- * The defines below should be set in your LOCAL keymap and using the above "NONE([hundreds],[tens],[ones])" macro for filling in the gaps
-*****************************************/
-// #define LEADING_NONES NONE(0, 1, 0)
-// #define MIDDLE_NONES NONE(0, 0, 3)
-// #define TRAILING_NONES NONE(0, 1, 0)
 
 /*****************************************
  * Define custom BT layer extra keys
@@ -175,32 +134,22 @@
 #define ARDUX_BASE_Y Y
 #define ARDUX_BASE_I I
 #define ARDUX_BASE_O O
-#define ARDUX_COMBO_N N
-#if ARDUX_COLEMAK
-#define ARDUX_BASE_A T
-#define ARDUX_BASE_R S
-#define ARDUX_BASE_T R
-#define ARDUX_BASE_S A
-#define ARDUX_BASE_E N
-#define ARDUX_BASE_Y E
-#define ARDUX_BASE_I I
-#define ARDUX_BASE_O O
-#define ARDUX_COMBO_N Y
-#endif
 
 /*****************************************
- * Layer IDs used by the ARDUX keymap
- * Do NOT change these and do NOT change the order of the layers as shown below
+ * Layer IDs - if you add / remove / move layers,
+ * please change these :)
  *****************************************/
 #define LAYER_ID_GLOBAL -1
 #define LAYER_ID_BASE 0
 #define LAYER_ID_NUMBERS 1
 #define LAYER_ID_SYMBOLS 2
-#define LAYER_ID_PARENTHETICALS 3
+#define LAYER_ID_LAYER_SWITCH 3
 #define LAYER_ID_NAVIGATION 4
 #define LAYER_ID_BT_SEL 5
 #define LAYER_ID_MOUSE 6
-#define LAYER_ID_CUSTOM 7
+#define LAYER_ID_OTHER 7
+#define LAYER_ID_CUSTOM 8
+
 
 /*****************************************
  * Standard ARDUX combo definitions
@@ -212,18 +161,22 @@
 		/*****************************************
 		 * 2 key combos
 		 *****************************************/
-		// Function layer doesn't apply to non-big ardux presently
 		combo_enter      { timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_N KEY_E>; bindings = <&kp ENTER>; };
-		combo_control    { timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_E KEY_R>; bindings = <&sk LCTRL>; };
-		combo_gui        { timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_O KEY_R>; bindings = <&sk LGUI>; };
-		combo_alt        { timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_T KEY_R>; bindings = <&sk LALT>; };
 		combo_backspace  { timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_E KEY_I>; bindings = <&kp BACKSPACE>; };
 		combo_delete     { timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_T KEY_I>; bindings = <&kp DELETE>; };
-		combo_shift_lock { timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_I KEY_O>; bindings = <&kt LSHFT>; };
+
+
+//		combo_control    { timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_E KEY_R>; bindings = <&sk LCTRL>; };
+//		combo_gui        { timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_O KEY_R>; bindings = <&sk LGUI>; };
+//		combo_alt        { timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_T KEY_R>; bindings = <&sk LALT>; };
+//		combo_shift_lock { timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_I KEY_O>; bindings = <&kt LSHFT>; };
+
+
+
 
 		combo_b           { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_E KEY_SP>; bindings = <&kp B>; };
 		combo_c           { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_E KEY_O>; bindings = <&kp C>; };
-		combo_n           { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_T KEY_SP>; bindings = <&kp ARDUX_COMBO_N>; };
+		combo_n           { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_T KEY_SP>; bindings = <&kp N>; };
 		combo_f           { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_N KEY_I>; bindings = <&kp F>; };
 		combo_g           { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_I KEY_A>; bindings = <&kp G>; };
 		combo_u           { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_O KEY_T>; bindings = <&kp U>; };
@@ -237,6 +190,7 @@
 		combo_slash       { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_N KEY_SP>; bindings = <&kp SLASH>; };
 		combo_exclamation { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_A KEY_T>; bindings = <&kp EXCL>; };
 
+// Keep numbers the same for Rain Toe as Ardux.
 		combo_seven { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_N KEY_I>; bindings = <&kp N7>; };
 		combo_eight { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_I KEY_A>; bindings = <&kp N8>; };
 		combo_nine  { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_E KEY_O>; bindings = <&kp N9>; };
@@ -276,34 +230,6 @@
 };
 
 /*****************************************
- * Standard ARDUX layer activation definitions
- * These should NOT be changed and are global in scope
- *****************************************/
-/ {
-	behaviors {
-		layer_base_kp: layer_base_kp { compatible = "zmk,behavior-hold-tap"; display-name = "layer_base_kp";
-						#binding-cells = <2>; tapping-term-ms = <TIMEOUT_LAYER_HOLD>; flavor = "tap-preferred";
-						bindings = <&mo>, <&kp>; };
-		layer_numbers_kp: layer_numbers_kp { compatible = "zmk,behavior-hold-tap"; display-name = "layer_numbers_kp";
-						#binding-cells = <2>; tapping-term-ms = <TIMEOUT_LAYER_HOLD>; flavor = "tap-preferred";
-						bindings = <&mo>, <&kp>; };
-		layer_symbols_kp: layer_symbols_kp { compatible = "zmk,behavior-hold-tap"; display-name = "layer_symbols_kp";
-						#binding-cells = <2>; tapping-term-ms = <TIMEOUT_LAYER_HOLD>; flavor = "tap-preferred";
-						bindings = <&mo>, <&kp>; };
-		layer_parentheticals_kp: layer_parentheticals_kp { compatible = "zmk,behavior-hold-tap"; display-name = "layer_parentheticals_kp";
-						#binding-cells = <2>; tapping-term-ms = <TIMEOUT_LAYER_HOLD>; flavor = "tap-preferred";
-						bindings = <&mo>, <&kp>; };
-		layer_custom_kp: layer_custom_kp { compatible = "zmk,behavior-hold-tap"; display-name = "layer_custom_kp";
-						#binding-cells = <2>; tapping-term-ms = <TIMEOUT_LAYER_HOLD>; flavor = "tap-preferred";
-						bindings = <&mo>, <&kp>; };
-		ctrl_alt_kp: ctrl_alt_kp { compatible = "zmk,behavior-hold-tap"; display-name = "ctrl_alt_kp";
-						#binding-cells = <2>; tapping-term-ms = <TIMEOUT_LAYER_HOLD>; flavor = "tap-preferred";
-						bindings = <&sk>, <&sk>; };
-	};
-};
-
-
-/*****************************************
  * Standard ARDUX layer definitions
  * !!!!!!!!!! FOR LEFT HANDED USE !!!!!!!!!!
  *****************************************/
@@ -314,8 +240,8 @@
 		base {
 			display-name = "rain toe4";
 			bindings = <
-				&layer_numbers_kp LAYER_ID_NUMBERS ARDUX_BASE_S        &kp ARDUX_BASE_T     &kp ARDUX_BASE_R     &layer_parentheticals_kp LAYER_ID_PARENTHETICALS ARDUX_BASE_A
-				&layer_custom_kp LAYER_ID_CUSTOM ARDUX_BASE_O          &kp ARDUX_BASE_I     &kp ARDUX_BASE_Y     &layer_symbols_kp LAYER_ID_SYMBOLS ARDUX_BASE_E
+				&lt LAYER_ID_NUMBERS ARDUX_BASE_S        &kp ARDUX_BASE_T     &kp ARDUX_BASE_R     &lt  LAYER_ID_LAYER_SWITCH ARDUX_BASE_A
+				&lt LAYER_ID_CUSTOM ARDUX_BASE_O          &kp ARDUX_BASE_I     &kp ARDUX_BASE_Y     &lt LAYER_ID_SYMBOLS ARDUX_BASE_E
 			>;
 		};
 
@@ -334,9 +260,9 @@
 			>;
 		};
 		parentheticals {
-			display-name = "Parentheses";
+			display-name = "layers";
 			bindings = <
-				&kp LBRC                                    &kp LPAR  &kp RPAR  &mo LAYER_ID_PARENTHETICALS
+				&kp LBRC                                    &kp LPAR  &kp RPAR  &mo  LAYER_ID_LAYER_SWITCH
 				&kp RBRC                                    &kp LBKT  &kp RBKT  &none
 			>;
 		};
@@ -361,6 +287,14 @@
 				&msc SCRL_DOWN   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT
 			>;
 		};
+		other {
+			display-name = "other";
+			bindings = <
+				&msc SCRL_UP     &mkp RCLK  &mmv MOVE_UP    &mkp LCLK
+				&msc SCRL_DOWN   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT
+			>;
+		};
+
 		ARDUX_LAYER_CUSTOM
 	};
 };
