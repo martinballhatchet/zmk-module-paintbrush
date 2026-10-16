@@ -15,6 +15,9 @@
 */
 
 /*
+TODO: Fix build of rain_toe variant
+TODO: Might need to reset my ZMK Config - create a new one probably
+TODO: layers aren't working quite right. can't switch back from some
 
 TODO: Rest of keys
 TODO: Switch out display
@@ -30,5 +33,5 @@ TODO: Put Ardux back as default but Rain Toe is a left sibling
 TODO: ?Put back right-handed? NIAR EOT :)
 TODO: Bluetooth on/off
 TODO: Put layout somewhere
- 
+
 */

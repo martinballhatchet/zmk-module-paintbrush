@@ -175,14 +175,14 @@
         };
 
         bluetooth {
-            bindings = <&tog 5>;
+            bindings = <&to 8>;
             key-positions = <4 0 3 7>;
         };
 
         clear_bt_profile {
             bindings = <&bt BT_CLR>;
             key-positions = <5 6 2 1>;
-            layers = <5>;
+            layers = <9>;
         };
 
         hyphen {
@@ -279,7 +279,7 @@
 
         default_layer {
             bindings = <
-&lt 4 R      &kp A  &kp I  &lt 6 N
+&lt 4 R      &kp A  &kp I  &lt 9 N
 &lt 2 SPACE  &kp T  &kp O  &lt 1 E
             >;
 
@@ -297,7 +297,7 @@
 
         arrows {
             bindings = <
-&trans  &kp HOME        &kp UP_ARROW    &lt 6 END
+&trans  &kp HOME        &kp UP_ARROW    &lt 10 END
 &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT
             >;
 
@@ -306,7 +306,7 @@
 
         numbers {
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &lt 6 NUMBER_4
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &lt 9 NUMBER_4
 &kp N5        &kp NUMBER_6  &kp N7        &kp N8
             >;
 
@@ -322,6 +322,33 @@
             label = "mods";
         };
 
+        functions {
+            bindings = <
+&kp F1  &kp F2  &kp F3  &lt 9 F4
+&kp F5  &kp F6  &kp F7  &kp F8
+            >;
+
+            label = "functions";
+        };
+
+        media {
+            bindings = <
+&trans        &kp C_PAUSE       &trans              &lt 9 C_VOL_UP
+&kp C_REWIND  &kp C_PLAY_PAUSE  &kp C_FAST_FORWARD  &kp C_VOLUME_DOWN
+            >;
+
+            label = "media";
+        };
+
+        custom {
+            bindings = <
+&trans  &trans       &trans  &lt 9 SPACE
+&trans  &bootloader  &trans  &trans
+            >;
+
+            label = "custom";
+        };
+
         bluetooth {
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &out OUT_BLE
@@ -333,36 +360,11 @@
 
         layer_select {
             bindings = <
-&to 0  &to 3  &to 8  &trans
-&to 2  &to 7  &to 9  &to 1
+&to 0  &to 3  &to 6  &trans
+&to 2  &to 5  &to 7  &to 1
             >;
 
             label = "layers";
-        };
-
-        functions {
-            bindings = <
-&kp F1  &kp F2  &kp F3  &lt 6 F4
-&kp F5  &kp F6  &kp F7  &kp F8
-            >;
-
-            label = "functions";
-        };
-
-        media {
-            bindings = <
-&trans        &kp C_PAUSE       &trans              &lt 6 C_VOL_UP
-&kp C_REWIND  &kp C_PLAY_PAUSE  &kp C_FAST_FORWARD  &kp C_VOLUME_DOWN
-            >;
-
-            label = "media";
-        };
-
-        custom {
-            bindings = <
-&trans  &trans  &trans  &lt 0 SPACE
-&trans  &trans  &trans  &trans
-            >;
         };
     };
 };
